@@ -1,5 +1,8 @@
 # mkdocs-expose-page-metadata
 
+[![PyPI](https://img.shields.io/pypi/v/mkdocs-expose-page-metadata)](https://pypi.org/project/mkdocs-expose-page-metadata/)
+[![PyPI - License](https://img.shields.io/pypi/l/mkdocs-expose-page-metadata)](LICENSE)
+
 This plug-in exposing all pages metadata in a single path!
 
 ## How to use?
