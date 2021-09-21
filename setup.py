@@ -16,7 +16,7 @@ setup(
     ],
     entry_points={
         'mkdocs.plugins': [
-            'mkdocs-expose-page-metadata = mkdocs-expose-page-metadata.plugin:ExposePageMetadataPlugin',
+            'mkdocs-expose-page-metadata = mkdocs_expose_page_metadata.plugin:ExposePageMetadataPlugin',
         ]
     }
 )
