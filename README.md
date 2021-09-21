@@ -47,11 +47,11 @@ Just follow the steps:
     [
         {
             "meta" : {
-                "title": "Some metadata title"
+                "title": "Some metadata title",
                 "tags": [
                     "First Tag",
                     "Second Tag"
-                ]
+                ],
                 "other-metadata": "bla"
             },
             "title": "Lorem Ipsum",
