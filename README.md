@@ -24,7 +24,7 @@ Just follow the steps:
             ...
     ```
  
-3. Create any metadata in your markdown:
+3. Create any metadata in your markdown, for example on `lorem-ipsum.md`:
 
     ```markdown
     ---
