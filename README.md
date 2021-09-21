@@ -39,7 +39,7 @@ Just follow the steps:
     ...
     ```
 
-4. Run you project, for exemple, with `mkdocs serve` command;
+4. Build and run you project, for exemple, with `mkdocs serve` command;
 
 5. Check all page metadata in a single endpoint: `/metadata/metadata.json`:
 
