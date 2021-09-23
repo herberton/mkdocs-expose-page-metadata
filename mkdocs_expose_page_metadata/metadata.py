@@ -1,13 +1,20 @@
+from typing import Tuple
 from mkdocs_expose_page_metadata.helpers import string_remove, dict_merge, dict_merge_value
 
 class Metadata:
+
+    # PROPERTIES
 
     @property
     def content(self) -> dict:
         return self._CONTENT
 
+    # CONSTRUCTOR
+
     def __init__(self, content: dict=None, annotations: list[str]=[]):
         self._CONTENT = dict_merge(content, self._extract_content_from(annotations))
+
+    # METHODS
 
     def _extract_content_from(self, annotations: list[str]) -> dict:
         content = {}
@@ -17,7 +24,7 @@ class Metadata:
                 content[key] = dict_merge_value(content, key, value)
         return content
 
-    def _extract_entry_from(self, annotation: str) -> (str, str):
+    def _extract_entry_from(self, annotation: str) -> Tuple[str, str]:
 
         # [meta]:<key> (value)
         if annotation.startswith("[meta]:"):

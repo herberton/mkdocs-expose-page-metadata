@@ -11,7 +11,7 @@ def find_toc_by_id(toc, _id):
         if toc_item_r is not None:
             return toc_item_r
 
-def get_subtitle_url_from(page: Page, parser: ContentParser, subtitle: str):
+def get_location_from(page: Page, parser: ContentParser, subtitle: str):
 
     _subtitle = string_remove(text=subtitle, old="#", strip=True)
 
@@ -33,10 +33,10 @@ def string_replace(text: str, old: str, new:str="", count: int=-1, strip: bool=F
     return result.strip() if strip else result
 
 def create_parser_from(page: Page):
-    _PARSER = ContentParser()
-    _PARSER.feed(page.content)
-    _PARSER.close()
-    return _PARSER
+    parser = ContentParser()
+    parser.feed(page.content)
+    parser.close()
+    return parser
 
 def to_json(object):
     return json.dumps(object, default=lambda o: o.__dict__, separators=(',', ':'), sort_keys=True)

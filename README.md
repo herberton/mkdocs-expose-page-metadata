@@ -13,7 +13,7 @@ Just follow the steps:
 
     ```
     ...
-    mkdocs-expose-page-metadata==0.1.3
+    mkdocs-expose-page-metadata==1.1.3
     
     ```
 
@@ -84,7 +84,7 @@ Just follow the steps:
                 "other-metadata": "bla"
             },
             "title": "Lorem Ipsum",
-            "url": "/lorem-ipsum"
+            "location": "/lorem-ipsum"
         },
         {
             "meta" : {
@@ -95,7 +95,7 @@ Just follow the steps:
                 ]
             },
             "title": "Lorem Ipsum 2",
-            "url": "/lorem-ipsum/#lorem-ipsum-2"
+            "location": "/lorem-ipsum/#lorem-ipsum-2"
         },
         {
             "meta" : {
@@ -105,7 +105,7 @@ Just follow the steps:
                 ]
             },
             "title": "Lorem Ipsum 2-1",
-            "url": "/lorem-ipsum/#lorem-ipsum-2-1"
+            "location": "/lorem-ipsum/#lorem-ipsum-2-1"
         }
     ]
     ```
