@@ -20,13 +20,21 @@ Just follow the steps:
 2. Enable plug-in on your `mkdocs.yml`:
 
     ```yaml
-        ...
+    ...
 
-        plugins:
-            - mkdocs-expose-page-metadata
-            ...
+    plugins:
+        - mkdocs-expose-page-metadata
+    ...
     ```
- 
+
+    1. Is possible to set these config parameters:
+    
+        |**Parameter**|**Type**|**Description**|**Default Value**|
+        |-|-|-|-|
+        |**metadata_page_path**|`str`|Metadata page path|`metadata`|
+        |**metadata_page_name**|`str`|Metadata page name|`metadata.json`|
+        |**metadata_page_encode**|`str`|Metadata page encode|`utf-8`|
+
 3. Create any metadata in your markdown, for example on `lorem-ipsum.md`:
 
     ```markdown
@@ -38,7 +46,25 @@ Just follow the steps:
     other-metadata: bla
     ---
 
-    # Lorem Ipsum
+    # Lorem Ipsum 1
+    
+    Some text 1
+    
+    # Lorem Ipsum 2
+    
+    [meta]:<test> (Some text)
+    [meta]:<first-middle-tags> (First middle tag value 1)
+    [meta]:<first-middle-tags> (First middle tag value 2)
+    
+    Some text 2
+    
+    ## Lorem Ipsum 2-1
+    
+    [second-middle-tags]:<> (Second middle tag value 1)
+    [second-middle-tags]:<> (Second middle tag value 2)
+    
+    Some text 2-1
+    
     ...
     ```
 
@@ -59,6 +85,27 @@ Just follow the steps:
             },
             "title": "Lorem Ipsum",
             "url": "/lorem-ipsum"
+        },
+        {
+            "meta" : {
+                "test": "Some text",
+                "first-middle-tags": [
+                    "First middle tag value 1",
+                    "First middle tag value 2"
+                ]
+            },
+            "title": "Lorem Ipsum 2",
+            "url": "/lorem-ipsum/#lorem-ipsum-2"
+        },
+        {
+            "meta" : {
+                "second-middle-tags": [
+                    "Second middle tag value 1",
+                    "Second middle tag value 2"
+                ]
+            },
+            "title": "Lorem Ipsum 2-1",
+            "url": "/lorem-ipsum/#lorem-ipsum-2-1"
         }
     ]
     ```

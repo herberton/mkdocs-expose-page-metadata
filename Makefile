@@ -1,7 +1,8 @@
 .MAIN: build
 
 .PHONY: build
-build: 
+build:
+	rm -rf ./dist
 	python -m build
 
 

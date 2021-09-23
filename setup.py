@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='mkdocs-expose-page-metadata',
-    version='0.0.2',
+    version='0.1.2',
     description='This plug-in exposing all pages metadata in a single path!',
     long_description='See https://github.com/herberton/mkdocs-expose-page-metadata for more details.',
     keywords='mkdocs metadata',
