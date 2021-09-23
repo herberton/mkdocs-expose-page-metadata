@@ -25,7 +25,7 @@ class ExposePageMetadataPlugin(BasePlugin):
     # EVENTS
 
     def on_pre_build(self, config):
-        self.metadata = MetadataPage(
+        self.page = MetadataPage(
             path=os.path.join(config['site_dir'], self.config[self._METADATA_PAGE_PATH_CONFIG]),
             name=self.config[self._METADATA_PAGE_NAME_CONFIG],
             encode=self.config[self._METADATA_PAGE_ENCODE_CONFIG]
@@ -34,8 +34,8 @@ class ExposePageMetadataPlugin(BasePlugin):
     def on_page_context(self, context, **kwargs):
         "Metadata Page Creation"
         page = context['page']
-        self.metadata.append_content_from(page)
+        self.page.append_content_from(page)
 
     def on_post_build(self, config, **kwargs):
         "Metadata Page Building"
-        self.metadata.save()
+        self.page.save()
