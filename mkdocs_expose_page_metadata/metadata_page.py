@@ -20,7 +20,7 @@ class MetadataPage:
         self._PATH = path if path else self.PATH
         self._NAME = name if name else self.NAME
         self._ENCODE = encode if encode else self.ENCODE
-        self._CONTENT = list[MetadataPageEntry]()
+        self._ENTRIES = list[MetadataPageEntry]()
 
     # METHODS
 
@@ -28,14 +28,14 @@ class MetadataPage:
 
         if page.meta:
             entry = MetadataPageEntry(title=page.title, location=page.url, meta=page.meta)
-            self._CONTENT.append(entry)
+            self._ENTRIES.append(entry)
 
         parser = MetadataParser(page)
 
         for entry in parser.entries:
             if (not entry.location):
                 raise Exception(f"Location not found for subtitle \"{entry.title}\" on page \"{page.title}\"")
-            self._CONTENT.append(entry)
+            self._ENTRIES.append(entry)
 
     def save(self):
         endpoint = os.path.join(self._PATH, self._NAME)
@@ -43,4 +43,4 @@ class MetadataPage:
         utils.write_file(content.encode(self._ENCODE), endpoint)
     
     def __repr__(self) -> str:
-        return to_json([entry.to_dict() for entry in self._CONTENT])
+        return to_json([entry.to_dict() for entry in self._ENTRIES])

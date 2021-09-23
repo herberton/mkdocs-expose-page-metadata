@@ -33,8 +33,7 @@ class ExposePageMetadataPlugin(BasePlugin):
 
     def on_page_context(self, context, **kwargs):
         "Metadata Page Creation"
-        page = context['page']
-        self.page.append_content_from(page)
+        self.page.append_content_from(context['page'])
 
     def on_post_build(self, config, **kwargs):
         "Metadata Page Building"
