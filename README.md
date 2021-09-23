@@ -13,7 +13,7 @@ Just follow the steps:
 
     ```
     ...
-    mkdocs-expose-page-metadata==0.1.2
+    mkdocs-expose-page-metadata==0.1.3
     
     ```
 
