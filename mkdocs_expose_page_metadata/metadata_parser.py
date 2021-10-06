@@ -1,7 +1,7 @@
 import re
 
 from mkdocs.structure.pages import Page
-from mkdocs_expose_page_metadata.helpers import create_parser_from, get_location_from, string_remove
+from mkdocs_expose_page_metadata.helpers import create_parser_from, get_location_from, get_subititle_from
 from mkdocs_expose_page_metadata.metadata_page_entry import MetadataPageEntry
 
 class MetadataParser:
@@ -31,7 +31,7 @@ class MetadataParser:
 
             text = match.group(0)
 
-            subtitle = string_remove(text=self._PAGE_SUBTITLE_REGEX.search(text).group(0), old="#", strip=True)
+            subtitle = get_subititle_from(text=self._PAGE_SUBTITLE_REGEX.search(text).group(0))
             location = get_location_from(page=page, parser=parser, subtitle=subtitle)
             annotations = [annotation.group(0).strip() for annotation in self._PAGE_ANNOTATIONS_REGEX.finditer(text)]
 

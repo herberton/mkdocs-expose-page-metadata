@@ -11,17 +11,26 @@ def find_toc_by_id(toc, _id):
         if toc_item_r is not None:
             return toc_item_r
 
+def get_subititle_from(text: str):
+    return string_remove_list(text=text, olds=["#", "_", "*", "=", "^", "`", "~", "´"], strip=True)
+
 def get_location_from(page: Page, parser: ContentParser, subtitle: str):
 
-    _subtitle = string_remove(text=subtitle, old="#", strip=True)
+    _subtitle = get_subititle_from(text=subtitle)
 
     for section in parser.data:
         toc_item = find_toc_by_id(page.toc, section.id)
-        toc_item_title = string_remove(text=toc_item.title if toc_item else "", old="#", strip=True)
+        toc_item_title = get_subititle_from(text=toc_item.title if toc_item else "")
         if toc_item_title == _subtitle:
             return page.url + toc_item.url
 
     return None
+
+def string_remove_list(text: str, olds: list[str], count: int=-1, strip: bool=False):
+    result = text
+    for old in olds:
+        result = string_remove(text=result, old=old, count=count, strip=strip)
+    return result
 
 def string_remove(text: str, old: str, count: int=-1, strip: bool=False):
     return string_replace(text=text, old=old, count=count, strip=strip)
