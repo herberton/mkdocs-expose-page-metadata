@@ -10,7 +10,7 @@ setup(
     author='Herberton Candido Souza',
     author_email='herberton@gmail.com',
     license='Apache-2.0',
-    python_requires='>=3',
+    python_requires='>=3.9',
     packages=['mkdocs_expose_page_metadata'],
     install_requires=[
         'mkdocs>=1.1.2'
